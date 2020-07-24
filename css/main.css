@@ -387,16 +387,6 @@ li {
     font-size: 20px;
   }
 }
-@media (max-width: 530px) {
-  .title {
-    font-size: 16px;
-  }
-}
-@media (max-width: 440px) {
-  .title {
-    font-size: 14px;
-  }
-}
 
 .leader {
   padding: 90px 0;
