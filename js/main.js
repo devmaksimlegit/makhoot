@@ -28,3 +28,28 @@ menuButton.addEventListener('click', function() {
   // page.classList.toggle('page--lock');
   document.querySelector('html').classList.toggle('lock');
 });
+
+function tabs(buttonClass, contentClass) {
+  document.querySelectorAll('.' + buttonClass).forEach(function(element) {
+    element.addEventListener('click', function() {
+      document.querySelectorAll('.' + buttonClass).forEach(function(element) {
+        element.classList.remove(buttonClass + '--active');
+      });
+      document.querySelectorAll('.' + contentClass).forEach(function(element) {
+        element.classList.remove(contentClass + '--active');
+      });
+
+      this.classList.add(buttonClass + '--active');
+
+      const thisButton = this;
+
+      document.querySelectorAll('.' + buttonClass).forEach(function(element, index, arr) {
+        if (thisButton === arr[index]) {
+          document.querySelectorAll('.' + contentClass)[index].classList.add(contentClass + '--active');
+        }
+      });
+    });
+  });
+}
+
+tabs('tariffs__button', 'tariffs__content');
